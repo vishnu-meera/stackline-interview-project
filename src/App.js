@@ -10,13 +10,14 @@ import { getData } from "containers/actions";
 import "styles/App.css";
 const useStyles = makeStyles(() => ({
   root: {
+    backgroundColor: "#f8f8ff",
     display: "flex",
-    backgroundColor: "#F8F8FF"
+    flexDirection: "column",
+    justifyContent: "space-between"
   },
   container: {
-    minHeight: "100vh",
     display: "flex",
-    width: "100%"
+    marginTop: "30px"
   }
 }));
 
