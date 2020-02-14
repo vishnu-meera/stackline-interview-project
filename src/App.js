@@ -7,10 +7,11 @@ import Header from "components/header";
 import { CssBaseline } from "@material-ui/core";
 import { connect } from "react-redux";
 import { getData } from "containers/actions";
-
+import "styles/App.css";
 const useStyles = makeStyles(() => ({
   root: {
-    display: "flex"
+    display: "flex",
+    backgroundColor: "#F8F8FF"
   },
   container: {
     minHeight: "100vh",
