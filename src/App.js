@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
 const App = ({ getData }) => {
   const classes = useStyles();
   useEffect(() => {
-    getData();
+    getData("B007TIE0GQ");
   }, [getData]);
   return (
     <BrowserRouter>
@@ -33,9 +33,7 @@ const App = ({ getData }) => {
         <Header />
         <div className={classes.container}>
           <SideBar />
-          <main>
-            <Router />
-          </main>
+          <Router />
         </div>
       </div>
     </BrowserRouter>

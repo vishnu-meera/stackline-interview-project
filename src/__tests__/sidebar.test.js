@@ -14,8 +14,6 @@ describe("Sidebar", () => {
   });
 
   test("Sidebar : render component without error", () => {
-    expect(wrapper.html().toString()).toEqual(
-      '<header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-header-1 mui-fixed MuiPaper-elevation4" data-test="component-header"><div class="makeStyles-iconContainer-2"><img src="stack.png" class="makeStyles-icon-3"/></div></header>'
-    );
+    expect(wrapper.html().toString()).toEqual("");
   });
 });

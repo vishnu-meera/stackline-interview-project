@@ -15,7 +15,7 @@ describe("Header", () => {
 
   test("Header : render component without error", () => {
     expect(wrapper.html().toString()).toEqual(
-      '<header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-header-1 mui-fixed MuiPaper-elevation4" data-test="component-header"><div class="makeStyles-iconContainer-2"><img src="stack.png" class="makeStyles-icon-3"/></div></header>'
+      '<div data-test="component-header" class="makeStyles-header-1"><div class="makeStyles-iconContainer-2"><img src="stack.png" class="makeStyles-icon-3" alt="stackline icon"/></div></div>'
     );
   });
 });

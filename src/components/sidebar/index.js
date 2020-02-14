@@ -7,6 +7,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Chart from "@material-ui/icons/BarChart";
 import Home from "@material-ui/icons/Home";
 import List from "@material-ui/core/List";
+import { connect } from "react-redux";
+import Spinner from "hoc/spinner";
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -61,57 +63,62 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SideBar = () => {
+const SideBar = ({ product }) => {
+  const { data } = product;
   const classes = useStyles();
-
-  const productInfo = {
-    title: "Shark Ninja",
-    subtitle:
-      "Magic Bullet NutriBullet 12-Piece High-Speed Blender/Mixer System",
-    img: "https://images-na.ssl-images-amazon.com/images/I/51h-a5IaHeL.jpg",
-    tags: ["Pantry", "Obsolete", "Blender", "Lightning Deal"]
-  };
 
   return (
     <div className={classes.drawer} data-test="component-sidebar">
-      <div className={classes.product}>
-        <div className={classes.imageContainer}>
-          <img
-            className={classes.image}
-            src={productInfo.img}
-            alt={productInfo.title}
-          />
-        </div>
-        <div className={classes.title}>{productInfo.title}</div>
-        <div className={classes.subtitle}>{productInfo.subtitle}</div>
-      </div>
-      <Divider />
-      <div className={classes.tags}>
-        {productInfo.tags.map((t, k) => {
-          return (
-            <div className={classes.tag} key={k}>
-              {t}
+      {data && data.id ? (
+        <React.Fragment>
+          <div className={classes.product}>
+            <div className={classes.imageContainer}>
+              <img
+                className={classes.image}
+                src={data.image}
+                alt={product.title}
+              />
             </div>
-          );
-        })}
-      </div>
-      <Divider />
-      <List>
-        {["Overview", "Sales"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {text === "Overview" ? (
-                <Home style={{ color: "skyblue" }} />
-              ) : (
-                <Chart style={{ color: "skyblue" }} />
-              )}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+            <div className={classes.title}>{data.title}</div>
+            <div className={classes.subtitle}>{data.subtitle}</div>
+          </div>
+          <Divider />
+          <div className={classes.tags}>
+            {data.tags.map((t, k) => {
+              return (
+                <div className={classes.tag} key={k}>
+                  {t}
+                </div>
+              );
+            })}
+          </div>
+          <Divider />
+          <List>
+            {["Overview", "Sales"].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {text === "Overview" ? (
+                    <Home style={{ color: "skyblue" }} />
+                  ) : (
+                    <Chart style={{ color: "skyblue" }} />
+                  )}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+        </React.Fragment>
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };
 
-export default SideBar;
+const mapStateToProps = state => ({
+  product: state.product
+});
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
