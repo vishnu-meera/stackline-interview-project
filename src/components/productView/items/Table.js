@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 export default function StickyHeadTable({ columns, rows }) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(4);
+  const [rowsPerPage, setRowsPerPage] = React.useState(6);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -78,7 +78,7 @@ export default function StickyHeadTable({ columns, rows }) {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[4]}
+        rowsPerPageOptions={[6]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}

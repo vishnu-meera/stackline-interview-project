@@ -10,13 +10,13 @@ export const SalesTableCoulmns = [
     align: "center"
   },
   {
-    id: "retailSales",
+    id: "retail",
     label: "Retail Sales",
     minWidth: 100,
     align: "center"
   },
   {
-    id: "wholesaleSales",
+    id: "wholesale",
     label: "Wholesale Sales",
     minWidth: 100,
     align: "center"
@@ -28,7 +28,7 @@ export const SalesTableCoulmns = [
     align: "center"
   },
   {
-    id: "retailerMargin",
+    id: "margin",
     label: "Retailer Margin",
     minWidth: 100,
     align: "center"

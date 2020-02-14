@@ -13,11 +13,11 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#f8f8ff",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between"
+    justifyContent: "space-around"
   },
   container: {
     display: "flex",
-    marginTop: "30px"
+    marginTop: "20px"
   }
 }));
 

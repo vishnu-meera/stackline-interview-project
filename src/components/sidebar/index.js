@@ -12,12 +12,12 @@ import Spinner from "hoc/spinner";
 
 const useStyles = makeStyles(theme => ({
   drawer: {
-    width: "20%",
+    width: "22%",
     display: "flex",
     flexDirection: "column",
     backgroundColor: "#fff",
-    height: "90vh",
-    margin: "20px 20px 0 20px",
+    height: "85vh",
+    margin: "0 15px 0 15px",
     boxShadow: "2px 1px 4px -2px rgba(0,0,0,0.72)",
     padding: "10px"
   },
