@@ -115,6 +115,8 @@ const SideBar = ({ product }) => {
   );
 };
 
+// export default SideBar; // for testing without redux
+
 const mapStateToProps = state => ({
   product: state.product
 });
